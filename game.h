@@ -73,7 +73,6 @@ protected:
 	int move_number;                     // Number of moves made so far
 
 private:
-
 	// STATIC MEMBER CONSTANT
 	static const int SEARCH_LEVELS = 4;  // Levels for look-ahead evaluation
 
@@ -85,4 +84,3 @@ private:
 }
 
 #endif
-

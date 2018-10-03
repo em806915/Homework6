@@ -7,6 +7,8 @@
 
 all: game main.o game.o othello.o doc docs
 
+build: game
+
 game: main.o game.o othello.o
 	g++ -o game main.cc game.cc othello.cc
 
@@ -19,13 +21,10 @@ game.o: game.cc game.h
 othello.o: othello.cc othello.h game.h piece.h colors.h
 	g++ -c othello.cc
 
-#archive: main.cc game.cc othello.cc othello.h colors.h game.h piece.h Makefile
-#	tar -cvf homework_5_game.tar .
 doc:
 	doxygen -g
-
-docs: Doxyfile
 	doxygen Doxyfile
 
 clean:
-	rm edit game main.o game.o othello.o Doxyfile
+	rm -rf html latex
+	rm game main.o game.o othello.o Doxyfile
