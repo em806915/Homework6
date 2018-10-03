@@ -5,7 +5,7 @@
 
 .DEFAULT_GOAL := all
 
-all: game main.o game.o othello.o doc docs
+all: game main.o game.o othello.o doc
 
 build: game
 
@@ -26,5 +26,5 @@ doc:
 	doxygen Doxyfile
 
 clean:
-	rm -rf html latex
-	rm game main.o game.o othello.o Doxyfile
+	rm -f -rf html latex
+	rm -f game main.o game.o othello.o Doxyfile
